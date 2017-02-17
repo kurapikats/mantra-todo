@@ -1,10 +1,10 @@
 import React from 'react';
+import Navbar from './navbar';
 
 const Layout = ({content = () => null }) => (
   <div>
-    <div>
-      {content()}
-    </div>
+    <Navbar />
+    {content()}
   </div>
 );
 
