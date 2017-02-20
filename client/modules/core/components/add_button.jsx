@@ -16,7 +16,8 @@ class AddButton extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     Todos.insert({
-      name: this.state.item
+      name: this.state.item,
+      createdDate: new Date()
     }, (err, res) => {
       this.setState({
         item: ""

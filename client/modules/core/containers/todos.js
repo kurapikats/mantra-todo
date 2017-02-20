@@ -5,7 +5,11 @@ import Todos from '../components/todos.jsx';
 export const composer = ({context}, onData) => {
   const {Meteor, Collections} = context();
 
-  if (Meteor.subscribe('todos.all').ready()) {
+  const options = {
+    sort: {createdDate: 1}
+  };
+
+  if (Meteor.subscribe('todos.all', options).ready()) {
     const todos = Collections.Todos.find().fetch();
     onData(null, {todos});
   }

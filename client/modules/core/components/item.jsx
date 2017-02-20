@@ -1,5 +1,6 @@
 import React from 'react';
 import {Todos} from '/lib/collections';
+import ItemEdit from './item_edit';
 
 class Item extends React.Component {
   constructor(props) {
@@ -17,7 +18,7 @@ class Item extends React.Component {
     return (
       <li class="collection-item">{todo.name}
         <span class="badge">
-          <a href="/"><i class="material-icons">mode_edit</i></a>
+          <ItemEdit todo={todo} />
           <a href="#" onClick={this.handleDelete.bind(this, todo)}><i class="material-icons">delete</i></a>
         </span>
       </li>

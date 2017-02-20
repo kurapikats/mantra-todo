@@ -8,9 +8,13 @@ class Todos extends React.Component {
   }
 
   getItems() {
-    return this.props.todos.map((todo, i) => {
-      return <Item key={i} todo={todo} />
-    });
+    if (this.props.todos.length) {
+      return this.props.todos.map((todo, i) => {
+        return <Item key={i} todo={todo} />
+      });
+    }
+
+    return (<li class="collection-item">No Data</li>);
   }
 
   render() {
